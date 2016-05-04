@@ -1,0 +1,20 @@
+---
+Jorge:
+- !ruby/object:Task
+  content: make an apple pie
+  id: 1
+  complete: false
+  created_at: 2016-05-04 12:19:29.061460921 +02:00
+  updated_at: 
+- !ruby/object:Task
+  content: walk the dog
+  id: 2
+  complete: false
+  created_at: 2016-05-04 12:19:29.061464368 +02:00
+  updated_at: 
+- !ruby/object:Task
+  content: shopping in caprabo
+  id: 3
+  complete: false
+  created_at: 2016-05-04 12:19:29.061467687 +02:00
+  updated_at: 

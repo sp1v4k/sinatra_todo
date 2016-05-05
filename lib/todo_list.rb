@@ -1,4 +1,6 @@
 require_relative "storage"
+require "yaml"
+require "yaml/store"
 
 class TodoList
   include Storage
@@ -18,7 +20,7 @@ class TodoList
   end
 
   def find_task_by_id(id)
-    @tasks.bsearch { |task| task.id == id }
+    @tasks.bsearch { |task| task.id == id.to_i }
   end
 
   def sort_by_created(sort_mode)

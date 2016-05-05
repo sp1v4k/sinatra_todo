@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <title> SINATRA TODO LIST </title>
+  </head>
+  <body>
+    <ul>
+      <% @todo_list.tasks.each do |task| %>
+        <li>
+          <%= task.content %> &nbsp &nbsp <a href="/complete_task/<%= task.id %>"> COMPLETE </a>
+        </li>
+      <% end %>
+    </ul>
+    <p>
+      <a href="/new_task"> ADD NEW TASK </a>
+    </p>
+  </body>
+</html>

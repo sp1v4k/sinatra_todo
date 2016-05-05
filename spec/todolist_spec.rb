@@ -2,6 +2,7 @@ require "todo_list"
 require "task"
 require "storage"
 
+
 describe TodoList do
   let(:my_list) { TodoList.new("Toni") }
   let(:content_1) { "make an apple pie" }
@@ -90,11 +91,11 @@ describe TodoList do
       @my_other_list.add_task(@task1)
       @my_other_list.add_task(@task2)
       @my_other_list.add_task(@task3)
-      storage.save(@my_other_list.user, @my_other_list.tasks)
+      @my_other_list.save
     end
     it "loads Jorge's tasks from tasks.yml and compare task1 content with saved task1 content" do
       my_other_list = TodoList.new("Jorge")
-      my_other_list.tasks = storage.load_tasks(my_other_list.user)
+      my_other_list.tasks = my_other_list.load_tasks(my_other_list.user)
       expect(my_other_list.tasks[0].content).to eql(@task1.content)
     end
   end

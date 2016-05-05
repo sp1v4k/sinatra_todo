@@ -1,10 +1,9 @@
-require "yaml"
-require "yaml/store"
+require_relative "storage"
 
 class TodoList
+  include Storage
   attr_reader :tasks, :user
   def initialize(user)
-    @todo_store = YAML::Store.new("./public/tasks.yml")
     @tasks = []
     @user = user
   end
@@ -29,16 +28,4 @@ class TodoList
       @tasks.sort { |task1, task2| task2.created_at <=> task1.created_at }
     end
   end
-
-  # def save
-  #   @todo_store.transaction do
-  #     @todo_store[@user] = @tasks
-  #   end
-  # end
-  #
-  # def load_tasks(user)
-  #   @tasks = @todo_store.transaction do
-  #     @todo_store[user]
-  #   end
-  # end
 end
